@@ -1,4 +1,4 @@
-package chapter4.item14;
+package effectiveJava.chapter4.item14;
 
 /**
  * @author gongchunru
