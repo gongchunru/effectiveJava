@@ -1,4 +1,4 @@
-package effectiveJava.No30;
+package effectiveJava.chapter6.item30;
 
 /**
  * Created by gongchunru on 2017/2/21.
