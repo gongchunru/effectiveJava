@@ -7,7 +7,6 @@ import org.junit.Test;
  */
 public class EnumTest {
 
-
     @Test
     public void testEnumMethod(){
         //1 遍历枚举类的方法，每个枚举类都有一个values()方法，返回枚举对象数组
