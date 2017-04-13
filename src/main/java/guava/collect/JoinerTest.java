@@ -1,6 +1,7 @@
 package guava.collect;
 
 import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,5 +35,10 @@ public class JoinerTest {
         return Joiner.on(delimiter).skipNulls().join(stringList);
     }
 
+
+    public static void split(){
+        String s = "1,2,3,4,";
+        List list = Splitter.on(",").trimResults().splitToList(s);
+    }
 
 }
