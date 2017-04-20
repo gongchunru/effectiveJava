@@ -26,8 +26,8 @@ public class PreconditionsTest {
         assertThat(returned,is(value));
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void testConstructorWithAsserts(){
-        new Precon
+        new PreconditionExample(null);
     }
 }

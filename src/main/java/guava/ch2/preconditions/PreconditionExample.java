@@ -31,6 +31,9 @@ public class PreconditionExample {
         return this.state.equalsIgnoreCase("open") && values[this.currentIndex] == 10;
     }
 
+    public int[] getValues(){
+        return values;
+    }
 
 
 }
