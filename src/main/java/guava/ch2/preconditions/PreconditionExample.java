@@ -20,6 +20,7 @@ public class PreconditionExample {
         this.currentIndex = checkElementIndex(index,values.length,"Index out of bounds for values");
         checkArgument(valueToSet <= 100,"Value can't be more than 100");
         values[this.currentIndex] = valueToSet;
+
     }
 
 
