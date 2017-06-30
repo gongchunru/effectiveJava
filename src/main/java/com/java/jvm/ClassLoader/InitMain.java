@@ -27,7 +27,7 @@ class Child extends Parent{
 
 public class InitMain {
     public static void main(String[] args) {
-        new Child();
+//        new Child(); //new关键字 初始化 注释开启和未开启做比较
         System.out.println("=======");
         System.out.println(Child.v);
     }
