@@ -8,14 +8,15 @@ import java.util.concurrent.TimeUnit;
 public class Shutdown {
     public static void main(String[] args) throws Exception {
         Runner r = new Runner();
-        Thread thread = new Thread(r,"countThread");
-        thread.start();
+        Thread countThread = new Thread(r,"CountThread1");
+        countThread.start();
+        //睡眠1秒，main线程对CountThread进行中断，使CountThread
         TimeUnit.SECONDS.sleep(1);
-        thread.interrupt();
+        countThread.interrupt();
 
         Runner two = new Runner();
-        thread = new Thread(two,"countThread");
-        thread.start();
+        countThread = new Thread(two,"CountThread2");
+        countThread.start();
         TimeUnit.SECONDS.sleep(1);
         two.cancle();
     }

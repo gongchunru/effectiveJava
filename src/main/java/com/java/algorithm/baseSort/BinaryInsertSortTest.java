@@ -52,4 +52,13 @@ public class BinaryInsertSortTest {
         System.out.println();
     }
 
+
+    public static void sort(int[] data){
+
+        for (int i = 0;i < data.length ; i++){
+
+        }
+
+    }
+
 }
