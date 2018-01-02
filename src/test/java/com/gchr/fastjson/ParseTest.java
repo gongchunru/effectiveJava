@@ -1,6 +1,7 @@
 package com.gchr.fastjson;
 
 import com.alibaba.fastjson.JSONObject;
+import com.java.chapter14.typeinfo.pets.Cat;
 import org.junit.Test;
 
 /**
@@ -10,8 +11,18 @@ import org.junit.Test;
  */
 public class ParseTest {
 
-    @Test
-    public void test1(){
+    public static void main(String[] args) {
+        int aa = 2;
+        switch (aa){
+            case 1:
+                System.out.println("aaa");
+                break;
+            case 2:
+                System.out.println("22222");
+                break;
+            case 3:
+                System.out.println("3333");
+        }
     }
 
 }
