@@ -1,7 +1,6 @@
 package test;
 
 
-import javax.sound.midi.Soundbank;
 import javax.xml.ws.Holder;
 
 /**
@@ -19,11 +18,11 @@ public class Demo1 {
 
 
         add(a,b);
-        //2, 22
+        //1, 11
         System.out.println("a: "+a+",b:"+b);
 
         add2(a,b);
-        // 2, 22
+        // 1, 11
         System.out.println("a: "+a+",b:"+b);
 
         Holder<Integer> holder = new Holder<Integer>(b);
