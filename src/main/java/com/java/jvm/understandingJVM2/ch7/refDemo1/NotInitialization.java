@@ -1,4 +1,4 @@
-package com.java.improve.ClassLoader.refDemo1;
+package com.java.jvm.understandingJVM2.ch7.refDemo1;
 
 /**
  * Created by gongchunru on 2016/12/1.
@@ -8,12 +8,12 @@ package com.java.improve.ClassLoader.refDemo1;
  */
 public class NotInitialization {
     public static void main(String[] args) {
-//        System.out.println(SubClass.value);
+        System.out.println(SubClass.value);
 
 
         //Test02
         //通过数组定义引用类，不会触发此类的初始化。
 
-        SupperClass[] sca = new SupperClass[10];
+//        SupperClass[] sca = new SupperClass[10];
     }
 }

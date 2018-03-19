@@ -1,4 +1,4 @@
-package com.java.improve.ClassLoader.refDemo1;
+package com.java.jvm.understandingJVM2.ch7.refDemo1;
 
 /**
  * Created by gongchunru on 2016/12/1.
