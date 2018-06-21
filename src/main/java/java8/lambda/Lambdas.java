@@ -1,6 +1,7 @@
 package java8.lambda;
 
 import java.awt.event.ActionListener;
+import java.util.function.BinaryOperator;
 
 /**
  * lambda的几种形式（变体）
@@ -21,6 +22,11 @@ public class Lambdas{
             System.out.print("Hello");
             System.out.println(" world");
         };
+
+        BinaryOperator<Long> addExplicit = (Long x, Long y) -> x + y;
+
+
+
 
 
     }
