@@ -15,7 +15,7 @@ import static org.hamcrest.CoreMatchers.*;
 public class CharsetsTest {
 
     @Test
-    public void testCharsets(){
+    public void absctest(){
         byte[] bytes = null;
 
         try {
