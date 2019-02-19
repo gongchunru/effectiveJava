@@ -9,8 +9,6 @@ import io.netty.util.CharsetUtil;
 
 import javax.activation.MimetypesFileTypeMap;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.regex.Pattern;
@@ -31,55 +29,56 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
 
     @Override
     protected void messageReceived(ChannelHandlerContext ctx, FullHttpRequest request) throws Exception {
-        if (!request.getDecoderResult().isSuccess()){
-            sendError(ctx,HttpResponseStatus.BAD_REQUEST);
-            return;
-        }
-        if (request.getMethod()!=HttpMethod.GET){
-            sendError(ctx,HttpResponseStatus.METHOD_NOT_ALLOWED);
-            return;
-        }
-        final String uri = request.getUri();
-        final String path = sanitizeUri(uri);
 
-        if (path==null){
-            sendError(ctx,HttpResponseStatus.FORBIDDEN);
-            return;
-        }
-
-        File file = new File(path);
-        if (file.isHidden()||!file.exists()){
-            sendError(ctx,HttpResponseStatus.NOT_FOUND);
-            return;
-        }
-        if (file.isDirectory()){
-            if (uri.endsWith("/")){
-                sendListing(ctx,file);
-            }else {
-                sendRedirect(ctx,uri+"/");
-            }
-            return;
-        }
-
-        if (!file.isFile()){
-            sendError(ctx,HttpResponseStatus.FORBIDDEN);
-            return;
-        }
-        RandomAccessFile randomAccessFile = null;
-
-        try {
-            randomAccessFile = new RandomAccessFile(file,"r");//以只读的方式打开
-        } catch (FileNotFoundException e) {
-            sendError(ctx,HttpResponseStatus.NOT_FOUND);
-            return;
-        }
-
-        long fileLength = randomAccessFile.length();
-
-        HttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1,HttpResponseStatus.OK);
-//        setContentLength();
-
-        setContentTypeHeader(response,file);
+//        if (!request.getDecoderResult().isSuccess()){
+//            sendError(ctx,HttpResponseStatus.BAD_REQUEST);
+//            return;
+//        }
+//        if (request.getMethod()!=HttpMethod.GET){
+//            sendError(ctx,HttpResponseStatus.METHOD_NOT_ALLOWED);
+//            return;
+//        }
+//        final String uri = request.getUri();
+//        final String path = sanitizeUri(uri);
+//
+//        if (path==null){
+//            sendError(ctx,HttpResponseStatus.FORBIDDEN);
+//            return;
+//        }
+//
+//        File file = new File(path);
+//        if (file.isHidden()||!file.exists()){
+//            sendError(ctx,HttpResponseStatus.NOT_FOUND);
+//            return;
+//        }
+//        if (file.isDirectory()){
+//            if (uri.endsWith("/")){
+//                sendListing(ctx,file);
+//            }else {
+//                sendRedirect(ctx,uri+"/");
+//            }
+//            return;
+//        }
+//
+//        if (!file.isFile()){
+//            sendError(ctx,HttpResponseStatus.FORBIDDEN);
+//            return;
+//        }
+//        RandomAccessFile randomAccessFile = null;
+//
+//        try {
+//            randomAccessFile = new RandomAccessFile(file,"r");//以只读的方式打开
+//        } catch (FileNotFoundException e) {
+//            sendError(ctx,HttpResponseStatus.NOT_FOUND);
+//            return;
+//        }
+//
+//        long fileLength = randomAccessFile.length();
+//
+//        HttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1,HttpResponseStatus.OK);
+////        setContentLength();
+//
+//        setContentTypeHeader(response,file);
 //        if (is)
     }
 
